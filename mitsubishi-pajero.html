@@ -88,17 +88,17 @@
           <div class="row calc_wrap">
             <div class="col-sm-12 radio_group">
               <h3>Выберете тип двигателя</h3>
-              <input id="gas" type="radio" name="engine" value="" checked>
+              <input id="gas" type="radio" name="engine" value="benzin" checked>
               <label for="gas">Бензин</label>
-              <input id="diesel" type="radio" name="engine" value="">
+              <input id="diesel" type="radio" name="engine" value="dizel">
               <label for="diesel">Дизель</label>
             </div>
             <div class="col-sm-12 radio_group">
               <h3>Выберете тип трансмиссии</h3>
-              <input id="gas" type="radio" name="transmission" value="" checked>
-              <label for="gas">АКПП</label>
-              <input id="diesel" type="radio" name="transmission" value="">
-              <label for="diesel">МКПП</label>
+              <input id="avtomat" type="radio" name="transmission" value="avtomat" checked>
+              <label for="avtomat">АКПП</label>
+              <input id="mehanika" type="radio" name="transmission" value="mehanika">
+              <label for="mehanika">МКПП</label>
             </div>
             <div class="col-sm-12 range_block">
               <h3>Выберете пробег автомобиля</h3>
@@ -108,7 +108,7 @@
               <table class="to_work">
                 <tr class="total">
                   <td>Предварительная стоимость:</td>
-                  <td class="total_price"> <span class="pr"> </span>руб.</td>
+                  <td class="total_price"> <span class="t_pr"> </span>руб.</td>
                 </tr>
               </table>
             </div>
@@ -121,75 +121,75 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr data-name="inspecia-to">
                     <td>Инспекция ТO</td>
                     <td class="to_price">1200</td>
                   </tr>
-                  <tr>
+                  <tr data-name="maslo-v-dvigatele">
                     <td>Масло в двигателе и масляный фильтр</td>
                     <td class="to_price">500</td>
                   </tr>
-                  <tr>
+                  <tr data-name="svechi-zazhigania">
                     <td>Свечи зажигания</td>
                     <td class="to_price">2500</td>
                   </tr>
-                  <tr>
+                  <tr data-name="vozdushnyi-filtr">
                     <td>Воздушный фильтр</td>
                     <td class="to_price">200</td>
                   </tr>
-                  <tr>
+                  <tr data-name="salonnyi-filtr">
                     <td>Салонный фильтр</td>
                     <td class="to_price">500</td>
                   </tr>
-                  <tr>
+                  <tr data-name="toplivnyi-filtr-naruzhnyi">
                     <td>Топливный фильтр (наружный)</td>
                     <td class="to_price">800</td>
                   </tr>
-                  <tr>
+                  <tr data-name="toplivnyi-filtr-v-bake">
                     <td>Топливный фильтр (в баке)</td>
                     <td class="to_price">3500</td>
                   </tr>
-                  <tr>
+                  <tr data-name="antifriz">
                     <td>Охлаждающая жидкость (антифриз)</td>
                     <td class="to_price">600</td>
                   </tr>
-                  <tr>
+                  <tr data-name="zhidkost-gidroprivoda">
                     <td>Жидкость гидропривода тормозов и сцепления</td>
                     <td class="to_price">600</td>
                   </tr>
-                  <tr>
+                  <tr data-name="maslo-m-2wd">
                     <td>Масло МКПП (2WD)</td>
                     <td class="to_price">600</td>
                   </tr>
-                  <tr>
+                  <tr data-name="maslo-m-4wd">
                     <td>Масло МКПП (4WD)</td>
                     <td class="to_price">600</td>
                   </tr>
-                  <tr>
+                  <tr data-name="maslo-a-2wd">
                     <td>Масло в АКПП (2WD)</td>
                     <td class="to_price">2500</td>
                   </tr>
-                  <tr>
+                  <tr data-name="maslo-a-4wd">
                     <td>Масло в АКПП (4WD)</td>
                     <td class="to_price">2500</td>
                   </tr>
-                  <tr>
+                  <tr data-name="maslo-v-razdatochnoi-korobke">
                     <td>Масло в раздаточной коробке</td>
                     <td class="to_price">600</td>
                   </tr>
-                  <tr>
+                  <tr data-name="maslo-v-differencialah-obychnyi">
                     <td>Масло в дифференциалах (Обычный дифф. или LSD с вискомуфтой)</td>
                     <td class="to_price">600</td>
                   </tr>
-                  <tr>
+                  <tr data-name="maslo-v-differencialah-mehanicheskii">
                     <td>Масло в дифференциалах (Механический или гибридный LSD)</td>
                     <td class="to_price">600</td>
                   </tr>
-                  <tr>
+                  <tr data-name="grm">
                     <td>Ремень привода ГРМ</td>
                     <td class="to_price">6000</td>
                   </tr>
-                  <tr>
+                  <tr data-name="smazka-sharnirov">
                     <td>Смазка шарниров, в т.ч. карданных</td>
                     <td class="to_price">500</td>
                   </tr>
@@ -197,7 +197,8 @@
                     <td>Предварительная стоимость:</td>
                     <td class="total_price"> 
                       <!--span 14300 руб.-->
-                      <input class="t_prise" type="text" value="0">
+                      <span class="t_pr"> </span>руб.
+                      <!-- <input class="t_prise" type="text" value="0" readonly> -->
                     </td>
                   </tr>
                 </tbody>
@@ -297,7 +298,7 @@
 </div>
 <div id="servise_book" class="white-popup mfp-with-anim mfp-hide">
 <h2>Запись на ТО</h2>
-<p>Предварительная стоимость: <b class="servise_book__price"> 14000<b> руб</p>
+<p>Предварительная стоимость: <b class="servise_book__price"> <span>14000</span><b> руб</p>
 <form id="message-form">
 <input type="hidden" name="project_name" value="Название проекта">
 <input type="hidden" name="admin_email" value="">
@@ -330,6 +331,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script async src="js/main.js"></script>
+        <script src="js/calculate.js"></script>
       </footer>
     </div>
   </body>
